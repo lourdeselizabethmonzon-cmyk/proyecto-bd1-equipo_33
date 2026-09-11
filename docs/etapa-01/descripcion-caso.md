@@ -1,7 +1,5 @@
 # Descripción del Caso: Sistema de Gestión de Ventas - Corrientes Porá Bus
 
-## 1. Organización
-**Corrientes Porá Bus** es una empresa dedicada al transporte de pasajeros de larga distancia en la República Argentina, conectando terminales cabeceras e intermedias a nivel nacional. La compañía opera servicios regulares interurbanos mediante una flota de unidades de gran porte.
 
 # 01. ORGANIZACIÓN
 
