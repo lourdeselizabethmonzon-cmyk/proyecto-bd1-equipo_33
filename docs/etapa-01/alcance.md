@@ -1,0 +1,10 @@
+# 2. Alcance del Sistema
+
+* **Gestión de Rutas y Terminales:** Registro y administración del catálogo de terminales cabeceras e intermedias a nivel provincial y nacional, vinculados a rutas interurbanas con distancias en kilómetros y duraciones estimadas de recorrido.
+* **Gestión de Flota y Capacidad (Stock):** Control del inventario físico de las unidades vehiculares (patente, marca, modelo, cantidad de pisos y capacidad total), desagregando individualmente cada butaca con su número físico, nivel, ubicación (pasillo o ventanilla) y tipo de servicio (Semicama, Cama Ejecutivo, Suite Cama) para prevenir sobreventas.
+* **Gestión de Viajes y Cronogramas:** Programación, modificación y cancelación de servicios de largo recorrido, coordinando una ruta, fecha y hora de partida, tiempo proyectado de arribo, tarifa base y un ómnibus asignado, impidiendo colisiones operativas de una misma unidad física.
+* **Gestión de Clientes y Pasajeros:** Padrón unificado de personas físicas y jurídicas con validación unívoca del documento de identidad (DNI, CUIT, Pasaporte), diferenciando al comprador comercial de los pasajeros nominativos que abordan el servicio.
+* **Gestión de Personal y Puntos de Emisión:** Registro del personal comercial con legajo, DNI, datos de contacto y turnos laborales, asignando la autoría operativa y la auditoría a cada comprobante emitido.
+* **Gestión de Venta y Emisión de Pasajes:** Consulta de frecuencias disponibles, selección de butacas en tiempo real, emisión de boletos vinculados a una factura y congelamiento de tarifas pactadas al momento de la transacción.
+* **Gestión de Facturación y Pagos:** Registro de comprobantes comerciales respaldados por una o más modalidades de pago (efectivo, tarjeta de débito, crédito, transferencia bancaria), exigiendo la cancelación total del importe para confirmar la operación.
+* **Gestión de Reservas y Devoluciones:** Administración de estados de butacas y boletos, admitiendo reservas temporales y cancelaciones previas a la salida del viaje con restitución inmediata de los asientos al inventario disponible.
