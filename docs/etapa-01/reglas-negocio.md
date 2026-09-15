@@ -1,4 +1,4 @@
-# Reaglas de negocio
+# Reglas de negocio
 * **RN.01 (Identificación de Terminales):** Cada terminal posee un código único (cod_terminal) que la identifica unívocamente dentro del sistema y registra sus datos de ubicación y tipo, pudiendo ser cabecera o intermedia.
 * **RN.02 (Identificación de Rutas):** Cada ruta posee un código único (cod_ruta) que la identifica unívocamente y vincula una terminal de origen con una terminal de destino, registrando la distancia en kilómetros y la duración estimada del recorrido.
 * **RN.03 (Identificación de Unidades):** Cada unidad de la flota posee una patente única (patente) que permite identificarla individualmente, registrando su marca, modelo, cantidad de pisos y capacidad total de pasajeros.
