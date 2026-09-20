@@ -1,0 +1,1676 @@
+{
+  "diagramType": 2,
+  "data": {
+    "nodes": [
+      {
+        "id": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+        "type": "Table",
+        "position": {
+          "x": 70.04840271055178,
+          "y": 29.337110481586404
+        },
+        "data": {
+          "label": "Persona",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "4860fde9-1264-4490-ae4f-6eab97e960e3",
+              "name": "Id_Persona",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "50e0ec8a-931d-4e85-b4bb-90fe80d86d65",
+              "name": "DNI",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "15"
+            },
+            {
+              "id": "9c4e02b3-2779-4143-923b-800db1133796",
+              "name": "Nombre",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "50"
+            },
+            {
+              "id": "354329ec-da0f-4a9a-8822-834aacee4d82",
+              "name": "Apellido",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "50"
+            },
+            {
+              "id": "d1806388-f51c-4062-98a9-62b36ffca7bf",
+              "name": "Fecha_Nacimiento",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "6ff0fdaa-0265-4be0-ab32-7e6df8c15ab7",
+              "name": "Email",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "100"
+            },
+            {
+              "id": "3731a498-10d0-445e-988a-f66d2e846a6b",
+              "name": "Domicilio",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "150"
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 201
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "5f8916dc-be39-49a4-ba2c-96b9ea3b7667",
+        "type": "Table",
+        "position": {
+          "x": 70.04840271055178,
+          "y": 312.9915014164306
+        },
+        "data": {
+          "label": "Telefono",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "7c6c3bf6-891b-4b2a-8996-f33b66dea215",
+              "name": "Id_Telefono",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "bfc7d919-2677-412c-a06e-eeb8d45954ee",
+              "name": "Numero",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "20"
+            },
+            {
+              "id": "7da5c918-8997-4dcf-920c-96e4136f34df",
+              "name": "Tipo",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "20"
+            },
+            {
+              "id": "13f834c5-5050-4aea-a492-301ff2aa31ae",
+              "name": "Id_Persona",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "22a60135-4e4a-4dbf-b9d6-6450379eee1b",
+                "sourceTableId": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+                "columns": [
+                  {
+                    "id": "fk_4860fde9-1264-4490-ae4f-6eab97e960e3",
+                    "name": "Id_Persona",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 127
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "2524c4f6-a4ac-439e-87d8-0d266de403f9",
+        "type": "Table",
+        "position": {
+          "x": 407.7057115198451,
+          "y": 29.337110481586404
+        },
+        "data": {
+          "label": "Cliente_Comprador",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "4c827f91-6846-47e3-b697-46bad01f7053",
+              "name": "Id_Persona",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "298c248e-fe7c-48f5-8b8e-d26b2d1c22a1",
+                "sourceTableId": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+                "columns": [
+                  {
+                    "id": "fk_4860fde9-1264-4490-ae4f-6eab97e960e3",
+                    "name": "Id_Persona",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "f85f7f87-7bbc-4870-9454-4ea0a7fe3484",
+              "name": "Fecha_Alta",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "60e8872e-f47c-484f-a8b9-72f61dfad7cf",
+              "name": "Condicion_Fiscal",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "30"
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 102
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "b0dd416b-6dcb-4b27-a2a9-97ab81545ea1",
+        "type": "Table",
+        "position": {
+          "x": 407.7057115198451,
+          "y": 179.5070821529745
+        },
+        "data": {
+          "label": "Pasajero_Transportado",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "1f13f1cc-f600-49f6-b279-4753ccf9cac8",
+              "name": "Id_Persona",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "d11eeb24-2ead-494a-9d50-69871d3262b5",
+                "sourceTableId": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+                "columns": [
+                  {
+                    "id": "fk_4860fde9-1264-4490-ae4f-6eab97e960e3",
+                    "name": "Id_Persona",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "648a4098-fb0d-410e-bffb-39eda5122af8",
+              "name": "Tipo_Pasajero",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "30"
+            },
+            {
+              "id": "4eac2870-bac7-494e-92d4-80d769fcce12",
+              "name": "Observaciones",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "150"
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 102
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "1ce18613-dec2-40eb-b4e7-546b9b3d612d",
+        "type": "Table",
+        "position": {
+          "x": 407.7057115198451,
+          "y": 329.6770538243626
+        },
+        "data": {
+          "label": "Empleado",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "450f17c7-8d0d-4bf0-844b-1ae444b524b3",
+              "name": "Id_Persona",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "505b218b-b6b2-4dac-be5e-cd3b8602b7ad",
+                "sourceTableId": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+                "columns": [
+                  {
+                    "id": "fk_4860fde9-1264-4490-ae4f-6eab97e960e3",
+                    "name": "Id_Persona",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "d50bee30-9392-4f6f-a00e-bbf025e4e17d",
+              "name": "Legajo",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "15"
+            },
+            {
+              "id": "c90cb3be-d188-43ef-9786-7f36faedcd9b",
+              "name": "Cargo",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "50"
+            },
+            {
+              "id": "4bf1b1db-a651-4027-bf31-7f914ee644ca",
+              "name": "Fecha_Ingreso",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "2f30d401-9a15-48e2-8eea-0d6b0663e8fe",
+              "name": "Sueldo",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "10"
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 152
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "1ffe7c6f-3242-45b5-8da4-d8d962090db5",
+        "type": "Table",
+        "position": {
+          "x": 70.04840271055178,
+          "y": 579.9603399433428
+        },
+        "data": {
+          "label": "Provincia",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "786244af-944a-46a6-a1fe-d3cc369d7a88",
+              "name": "Id_Provincia",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "d9d7ccc8-11f3-486b-ad74-7796134ef507",
+              "name": "Nombre_Provincia",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "50"
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 76
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "9e5ac2f8-8955-425d-b403-7fc0363a1d79",
+        "type": "Table",
+        "position": {
+          "x": 407.7057115198451,
+          "y": 579.9603399433428
+        },
+        "data": {
+          "label": "Localidad",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "f2caef34-4dd6-446e-a0d0-f0da193a2aaa",
+              "name": "Id_Localidad",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "0c054ce9-d64c-4840-af82-082b8351d500",
+              "name": "Nombre_Localidad",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "50"
+            },
+            {
+              "id": "6c7c3f5f-787f-4649-baad-66b64076b7e8",
+              "name": "Codigo_Postal",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "10"
+            },
+            {
+              "id": "95998473-4451-4016-bb87-44b9e8ea3d4e",
+              "name": "Id_Provincia",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "5b66c2c0-5487-4695-9339-8dc6998331b0",
+                "sourceTableId": "1ffe7c6f-3242-45b5-8da4-d8d962090db5",
+                "columns": [
+                  {
+                    "id": "fk_786244af-944a-46a6-a1fe-d3cc369d7a88",
+                    "name": "Id_Provincia",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 127
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "0d521cc2-3947-4755-9ed7-d1b556c03a0d",
+        "type": "Table",
+        "position": {
+          "x": 766.4666021297193,
+          "y": 579.9603399433428
+        },
+        "data": {
+          "label": "Terminal",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "865df55d-d7c7-45c1-a787-55b03c5205f2",
+              "name": "Id_Terminal",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "4475e117-c423-4b8b-8b89-8bdfdfe53ec1",
+              "name": "Nombre_Terminal",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "80"
+            },
+            {
+              "id": "711268bb-9dbb-42e3-acfd-b4c48b453845",
+              "name": "Direccion",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "150"
+            },
+            {
+              "id": "a4d630e5-85d4-40f2-b450-47cc42cf19e6",
+              "name": "Id_Localidad",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "8ff4831d-68e2-4546-a843-293208c8316d",
+                "sourceTableId": "9e5ac2f8-8955-425d-b403-7fc0363a1d79",
+                "columns": [
+                  {
+                    "id": "fk_f2caef34-4dd6-446e-a0d0-f0da193a2aaa",
+                    "name": "Id_Localidad",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 127
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "50d4a5ee-f082-4338-8287-129fa49d9a1a",
+        "type": "Table",
+        "position": {
+          "x": 1125.2274927395933,
+          "y": 579.9603399433428
+        },
+        "data": {
+          "label": "Ruta",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "8bf11eab-e5d2-4786-92c1-2c3c2fb9ed56",
+              "name": "Id_Ruta",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "18678e78-8c8d-43b7-87e9-fa600012298b",
+              "name": "Denominacion",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "80"
+            },
+            {
+              "id": "ecfb43bb-9586-4c22-aff4-229e2571f568",
+              "name": "Distancia_Km",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "8"
+            },
+            {
+              "id": "2bb25c07-6709-4851-9b25-b6ead9dea45a",
+              "name": "Duracion_Estimada",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "a6977d25-2949-4199-96fe-a521e5fb61c1",
+              "name": "fk_Terminal_Origen",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "fad0722e-a095-4f7c-8757-65f5a4876ccc",
+                "sourceTableId": "0d521cc2-3947-4755-9ed7-d1b556c03a0d",
+                "columns": [
+                  {
+                    "id": "fk_865df55d-d7c7-45c1-a787-55b03c5205f2",
+                    "name": "fk_Terminal_Origen",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "01ad6f9d-0966-483c-b557-2063eff5ebf0",
+              "name": "fk_Terminal_Destino",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "799854e7-7a3c-4f2d-be96-c88e10c9cfe6",
+                "sourceTableId": "0d521cc2-3947-4755-9ed7-d1b556c03a0d",
+                "columns": [
+                  {
+                    "id": "fk_865df55d-d7c7-45c1-a787-55b03c5205f2",
+                    "name": "fk_Terminal_Destino",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 177
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "040651c0-ea5c-4db9-a4a5-a128ecb3738c",
+        "type": "Table",
+        "position": {
+          "x": 1125.2274927395933,
+          "y": 29.337110481586404
+        },
+        "data": {
+          "label": "Colectivo",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "a3a15e3e-1865-49eb-b28c-41212770a844",
+              "name": "Patente",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "10"
+            },
+            {
+              "id": "a91a5048-0b74-4628-96b5-136f949d936c",
+              "name": "Marca",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "40"
+            },
+            {
+              "id": "2e36d7f9-9ed7-485c-8024-31a5ac69d14b",
+              "name": "Modelo",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "40"
+            },
+            {
+              "id": "ddd52de5-09e0-4814-9956-aa28452f2f21",
+              "name": "Anio",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false
+            },
+            {
+              "id": "0e4e51a3-9530-4726-a59e-81f2a17c0954",
+              "name": "Capacidad",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 151
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "deff0618-ad06-469b-8ce4-56ec25335ef0",
+        "type": "Table",
+        "position": {
+          "x": 1483.9883833494675,
+          "y": 29.337110481586404
+        },
+        "data": {
+          "label": "Butacas",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "1457d80c-e21e-45fe-a69d-27b6f2782db0",
+              "name": "Id_Butaca",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "7f488161-2e3a-492d-b002-e9155d604885",
+              "name": "Numero_Butaca",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "f99a45b2-6fdb-49f2-b5b6-0e72b600ff54",
+              "name": "Tipo_Butaca",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "30"
+            },
+            {
+              "id": "0dbc3f12-a21c-4fb2-a1d9-bb1ec0d74dea",
+              "name": "Piso",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false
+            },
+            {
+              "id": "4cba11f1-9a77-486a-b656-493e18cadfd5",
+              "name": "Patente",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "10",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "fd96087a-94a0-40f0-bce5-049d1771f9b8",
+                "sourceTableId": "040651c0-ea5c-4db9-a4a5-a128ecb3738c",
+                "columns": [
+                  {
+                    "id": "fk_a3a15e3e-1865-49eb-b28c-41212770a844",
+                    "name": "Patente",
+                    "type": "VARCHAR(n)"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 152
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "aad3ee4b-e182-417f-b0c6-ef124fb76538",
+        "type": "Table",
+        "position": {
+          "x": 1483.9883833494675,
+          "y": 262.93484419263456
+        },
+        "data": {
+          "label": "Viaje",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "4a9922a0-7383-4641-8f0a-6c95822c139a",
+              "name": "Id_Viaje",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "13ec1a5a-0698-4b8d-af0d-18460f09d9e9",
+              "name": "Fecha_Salida",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "8adc65c3-f3b4-4b06-b434-81fd5c5a5c6e",
+              "name": "Hora_Salida",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "7eb73cb7-f450-43b2-b4a9-f1bf3acc9de2",
+              "name": "Fecha_Llegada",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "f9c10614-1927-4572-b43e-f97430d04b76",
+              "name": "Hora_Llegada",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "c3c8c808-6fcb-450f-8529-cf371992b5bc",
+              "name": "Estado_Viaje",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "20"
+            },
+            {
+              "id": "6a0bd387-0d12-4c38-bad9-d0a3a1baaabf",
+              "name": "Id_Ruta",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "166c82bd-52fa-47f8-9300-34baf5ab5fcd",
+                "sourceTableId": "50d4a5ee-f082-4338-8287-129fa49d9a1a",
+                "columns": [
+                  {
+                    "id": "fk_8bf11eab-e5d2-4786-92c1-2c3c2fb9ed56",
+                    "name": "Id_Ruta",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "18fb7cd8-b65e-4354-bece-ac8180f53edc",
+              "name": "Patente",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "10",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "df582990-70fb-451d-b8a5-9851ec6f3a9b",
+                "sourceTableId": "040651c0-ea5c-4db9-a4a5-a128ecb3738c",
+                "columns": [
+                  {
+                    "id": "fk_a3a15e3e-1865-49eb-b28c-41212770a844",
+                    "name": "Patente",
+                    "type": "VARCHAR(n)"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "b44a7621-ebe4-4102-a02b-9d02a1f4587e",
+              "name": "fk_Chofer",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "f1d36eab-e877-4c66-ab31-317f1bf6973a",
+                "sourceTableId": "1ce18613-dec2-40eb-b4e7-546b9b3d612d",
+                "columns": [
+                  {
+                    "id": "fk_450f17c7-8d0d-4bf0-844b-1ae444b524b3",
+                    "name": "fk_Chofer",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 252
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "fd588837-df5e-4a8c-9ca6-3cbd097fd243",
+        "type": "Table",
+        "position": {
+          "x": 766.4666021297193,
+          "y": 29.337110481586404
+        },
+        "data": {
+          "label": "Venta",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "1dce6c3a-81ec-419d-847f-21cd3d803467",
+              "name": "Id_Venta",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "61a95eb4-625d-49de-bfae-0a9f43c082aa",
+              "name": "Fecha_Venta",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "8c6efb7b-8aca-4a99-9bbd-102cc7f28461",
+              "name": "Hora_Venta",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "57277d5c-7ec9-4a7e-8b7b-cafb071c477c",
+              "name": "Canal_Venta",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "30"
+            },
+            {
+              "id": "3e24ce10-cef9-4d42-9ec3-4441034d5700",
+              "name": "fk_Cliente",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "4b111b2e-05e0-47d4-81fd-f8cb7751e9a4",
+                "sourceTableId": "2524c4f6-a4ac-439e-87d8-0d266de403f9",
+                "columns": [
+                  {
+                    "id": "fk_4c827f91-6846-47e3-b697-46bad01f7053",
+                    "name": "fk_Cliente",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "3c83cc94-ebd4-4366-9b6e-03e3d93afbb2",
+              "name": "fk_Vendedor",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "9df12ef1-a49e-4721-a8dd-94c04da19839",
+                "sourceTableId": "1ce18613-dec2-40eb-b4e7-546b9b3d612d",
+                "columns": [
+                  {
+                    "id": "fk_450f17c7-8d0d-4bf0-844b-1ae444b524b3",
+                    "name": "fk_Vendedor",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 177
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "54bbdaea-e1be-46b0-8fc8-d36972def9d3",
+        "type": "Table",
+        "position": {
+          "x": 1125.2274927395933,
+          "y": 846.929178470255
+        },
+        "data": {
+          "label": "Pasaje",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "a74f3d0d-4594-4dce-b48d-94382adb0b31",
+              "name": "Id_Pasaje",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "a7e82248-e58c-48b4-a435-71718df513ae",
+              "name": "Precio",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "10"
+            },
+            {
+              "id": "b6e4cac7-b51a-4949-8513-a446e5579dbb",
+              "name": "Estado_Pasaje",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "20"
+            },
+            {
+              "id": "c2546a7d-1446-4935-a0f6-b9f308242a17",
+              "name": "Id_Venta",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "c22d4ccf-c7b7-412a-8440-b316e5cfc195",
+                "sourceTableId": "fd588837-df5e-4a8c-9ca6-3cbd097fd243",
+                "columns": [
+                  {
+                    "id": "fk_1dce6c3a-81ec-419d-847f-21cd3d803467",
+                    "name": "Id_Venta",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "5e3e9c84-23c2-43a2-84cc-fc2727d197f7",
+              "name": "Id_Viaje",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "e8123edd-bdc6-422c-932a-4993fab95c7b",
+                "sourceTableId": "aad3ee4b-e182-417f-b0c6-ef124fb76538",
+                "columns": [
+                  {
+                    "id": "fk_4a9922a0-7383-4641-8f0a-6c95822c139a",
+                    "name": "Id_Viaje",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "094ee66f-41f5-4c06-8ec6-da07b6a50b8d",
+              "name": "Id_Butaca",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "b194aa97-274a-4334-b090-c3c759840d43",
+                "sourceTableId": "deff0618-ad06-469b-8ce4-56ec25335ef0",
+                "columns": [
+                  {
+                    "id": "fk_1457d80c-e21e-45fe-a69d-27b6f2782db0",
+                    "name": "Id_Butaca",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "d1a1cdd1-1f83-4118-9c2f-bc8caefad366",
+              "name": "fk_Pasajero",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "d7f4efff-7cda-47d9-8832-107025b99021",
+                "sourceTableId": "b0dd416b-6dcb-4b27-a2a9-97ab81545ea1",
+                "columns": [
+                  {
+                    "id": "fk_1f13f1cc-f600-49f6-b279-4753ccf9cac8",
+                    "name": "fk_Pasajero",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 202
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "61d1c008-27c4-4cad-8884-9e17304fdaf2",
+        "type": "Table",
+        "position": {
+          "x": 766.4666021297193,
+          "y": 846.929178470255
+        },
+        "data": {
+          "label": "Pago",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "dae0dbd2-9097-426f-b694-bbf53b2c53b6",
+              "name": "Id_Pago",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "4b1fdec1-dde9-40ef-8385-77487e70ad4b",
+              "name": "Monto",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": "10"
+            },
+            {
+              "id": "9a53b92e-f3a9-4394-a3fb-3f5f9512bd88",
+              "name": "Fecha_Pago",
+              "type": "DATE",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "size": ""
+            },
+            {
+              "id": "e7ceb308-12e6-4396-bb0c-e74c8f6f5e2a",
+              "name": "Medio_Pago",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "30"
+            },
+            {
+              "id": "cb6293dc-5b43-4002-885a-f09b6f6d04fb",
+              "name": "Nro_Comprobante",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isOptional": true,
+              "isUnique": false,
+              "size": "30"
+            },
+            {
+              "id": "50f4d587-27ea-4730-9b40-c2b6a7d0b2a0",
+              "name": "Id_Venta",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isOptional": false,
+              "isUnique": false,
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "4b6e1ac5-26e8-40ad-83ad-544886bd9090",
+                "sourceTableId": "fd588837-df5e-4a8c-9ca6-3cbd097fd243",
+                "columns": [
+                  {
+                    "id": "fk_1dce6c3a-81ec-419d-847f-21cd3d803467",
+                    "name": "Id_Venta",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 177
+        },
+        "selected": false,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "id": "94305f5f-31bd-4872-9bf6-1395c8959808",
+        "type": "Relational",
+        "source": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+        "targetHandle": "foreign-key-handle-22a60135-4e4a-4dbf-b9d6-6450379eee1b",
+        "target": "5f8916dc-be39-49a4-ba2c-96b9ea3b7667",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "22a60135-4e4a-4dbf-b9d6-6450379eee1b",
+            "sourceTableId": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+            "columns": [
+              {
+                "id": "fk_4860fde9-1264-4490-ae4f-6eab97e960e3",
+                "name": "Id_Persona",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "46a1590c-ed81-4bc4-a878-0a752333cdbb",
+        "type": "Relational",
+        "source": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+        "targetHandle": "foreign-key-handle-298c248e-fe7c-48f5-8b8e-d26b2d1c22a1",
+        "target": "2524c4f6-a4ac-439e-87d8-0d266de403f9",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "298c248e-fe7c-48f5-8b8e-d26b2d1c22a1",
+            "sourceTableId": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+            "columns": [
+              {
+                "id": "fk_4860fde9-1264-4490-ae4f-6eab97e960e3",
+                "name": "Id_Persona",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "317be7d9-680a-4f46-a7d9-42f8dc243f49",
+        "type": "Relational",
+        "source": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+        "targetHandle": "foreign-key-handle-d11eeb24-2ead-494a-9d50-69871d3262b5",
+        "target": "b0dd416b-6dcb-4b27-a2a9-97ab81545ea1",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "d11eeb24-2ead-494a-9d50-69871d3262b5",
+            "sourceTableId": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+            "columns": [
+              {
+                "id": "fk_4860fde9-1264-4490-ae4f-6eab97e960e3",
+                "name": "Id_Persona",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "acb27664-eda7-4771-bb91-8e9d7ae7c109",
+        "type": "Relational",
+        "source": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+        "targetHandle": "foreign-key-handle-505b218b-b6b2-4dac-be5e-cd3b8602b7ad",
+        "target": "1ce18613-dec2-40eb-b4e7-546b9b3d612d",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "505b218b-b6b2-4dac-be5e-cd3b8602b7ad",
+            "sourceTableId": "5a7eb8a7-3ac9-4289-96db-38bc60670fdb",
+            "columns": [
+              {
+                "id": "fk_4860fde9-1264-4490-ae4f-6eab97e960e3",
+                "name": "Id_Persona",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "5f0b9514-84d9-461d-b15a-3921db2d64f7",
+        "type": "Relational",
+        "source": "1ffe7c6f-3242-45b5-8da4-d8d962090db5",
+        "targetHandle": "foreign-key-handle-5b66c2c0-5487-4695-9339-8dc6998331b0",
+        "target": "9e5ac2f8-8955-425d-b403-7fc0363a1d79",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "5b66c2c0-5487-4695-9339-8dc6998331b0",
+            "sourceTableId": "1ffe7c6f-3242-45b5-8da4-d8d962090db5",
+            "columns": [
+              {
+                "id": "fk_786244af-944a-46a6-a1fe-d3cc369d7a88",
+                "name": "Id_Provincia",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "2e080bcb-0dc2-4f68-bcf9-7337230f5334",
+        "type": "Relational",
+        "source": "9e5ac2f8-8955-425d-b403-7fc0363a1d79",
+        "targetHandle": "foreign-key-handle-8ff4831d-68e2-4546-a843-293208c8316d",
+        "target": "0d521cc2-3947-4755-9ed7-d1b556c03a0d",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "8ff4831d-68e2-4546-a843-293208c8316d",
+            "sourceTableId": "9e5ac2f8-8955-425d-b403-7fc0363a1d79",
+            "columns": [
+              {
+                "id": "fk_f2caef34-4dd6-446e-a0d0-f0da193a2aaa",
+                "name": "Id_Localidad",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "60d3fa69-7e77-4f4e-9a7a-652707cea41b",
+        "type": "Relational",
+        "source": "0d521cc2-3947-4755-9ed7-d1b556c03a0d",
+        "targetHandle": "foreign-key-handle-fad0722e-a095-4f7c-8757-65f5a4876ccc",
+        "target": "50d4a5ee-f082-4338-8287-129fa49d9a1a",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "fad0722e-a095-4f7c-8757-65f5a4876ccc",
+            "sourceTableId": "0d521cc2-3947-4755-9ed7-d1b556c03a0d",
+            "columns": [
+              {
+                "id": "fk_865df55d-d7c7-45c1-a787-55b03c5205f2",
+                "name": "fk_Terminal_Origen",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "b8b39388-6308-4a43-8919-d16ea6109f50",
+        "type": "Relational",
+        "source": "0d521cc2-3947-4755-9ed7-d1b556c03a0d",
+        "targetHandle": "foreign-key-handle-799854e7-7a3c-4f2d-be96-c88e10c9cfe6",
+        "target": "50d4a5ee-f082-4338-8287-129fa49d9a1a",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "799854e7-7a3c-4f2d-be96-c88e10c9cfe6",
+            "sourceTableId": "0d521cc2-3947-4755-9ed7-d1b556c03a0d",
+            "columns": [
+              {
+                "id": "fk_865df55d-d7c7-45c1-a787-55b03c5205f2",
+                "name": "fk_Terminal_Destino",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "fbb2732f-3749-4f63-90aa-74da0bb4c6da",
+        "type": "Relational",
+        "source": "040651c0-ea5c-4db9-a4a5-a128ecb3738c",
+        "targetHandle": "foreign-key-handle-fd96087a-94a0-40f0-bce5-049d1771f9b8",
+        "target": "deff0618-ad06-469b-8ce4-56ec25335ef0",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "fd96087a-94a0-40f0-bce5-049d1771f9b8",
+            "sourceTableId": "040651c0-ea5c-4db9-a4a5-a128ecb3738c",
+            "columns": [
+              {
+                "id": "fk_a3a15e3e-1865-49eb-b28c-41212770a844",
+                "name": "Patente",
+                "type": "VARCHAR(n)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "eeb190c5-9730-4477-a162-ff7904f0ab57",
+        "type": "Relational",
+        "source": "50d4a5ee-f082-4338-8287-129fa49d9a1a",
+        "targetHandle": "foreign-key-handle-166c82bd-52fa-47f8-9300-34baf5ab5fcd",
+        "target": "aad3ee4b-e182-417f-b0c6-ef124fb76538",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "166c82bd-52fa-47f8-9300-34baf5ab5fcd",
+            "sourceTableId": "50d4a5ee-f082-4338-8287-129fa49d9a1a",
+            "columns": [
+              {
+                "id": "fk_8bf11eab-e5d2-4786-92c1-2c3c2fb9ed56",
+                "name": "Id_Ruta",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "1fc28e3c-9195-461e-b2c3-5594b25b9182",
+        "type": "Relational",
+        "source": "040651c0-ea5c-4db9-a4a5-a128ecb3738c",
+        "targetHandle": "foreign-key-handle-df582990-70fb-451d-b8a5-9851ec6f3a9b",
+        "target": "aad3ee4b-e182-417f-b0c6-ef124fb76538",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "df582990-70fb-451d-b8a5-9851ec6f3a9b",
+            "sourceTableId": "040651c0-ea5c-4db9-a4a5-a128ecb3738c",
+            "columns": [
+              {
+                "id": "fk_a3a15e3e-1865-49eb-b28c-41212770a844",
+                "name": "Patente",
+                "type": "VARCHAR(n)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "1edd90b0-e839-4fb6-b354-1a0ac3b292f6",
+        "type": "Relational",
+        "source": "1ce18613-dec2-40eb-b4e7-546b9b3d612d",
+        "targetHandle": "foreign-key-handle-f1d36eab-e877-4c66-ab31-317f1bf6973a",
+        "target": "aad3ee4b-e182-417f-b0c6-ef124fb76538",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "f1d36eab-e877-4c66-ab31-317f1bf6973a",
+            "sourceTableId": "1ce18613-dec2-40eb-b4e7-546b9b3d612d",
+            "columns": [
+              {
+                "id": "fk_450f17c7-8d0d-4bf0-844b-1ae444b524b3",
+                "name": "fk_Chofer",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "c12e1585-b0be-4fa1-aa74-058f442d1677",
+        "type": "Relational",
+        "source": "2524c4f6-a4ac-439e-87d8-0d266de403f9",
+        "targetHandle": "foreign-key-handle-4b111b2e-05e0-47d4-81fd-f8cb7751e9a4",
+        "target": "fd588837-df5e-4a8c-9ca6-3cbd097fd243",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "4b111b2e-05e0-47d4-81fd-f8cb7751e9a4",
+            "sourceTableId": "2524c4f6-a4ac-439e-87d8-0d266de403f9",
+            "columns": [
+              {
+                "id": "fk_4c827f91-6846-47e3-b697-46bad01f7053",
+                "name": "fk_Cliente",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "c10b5b23-edd5-46f5-b184-9bdc0de79745",
+        "type": "Relational",
+        "source": "1ce18613-dec2-40eb-b4e7-546b9b3d612d",
+        "targetHandle": "foreign-key-handle-9df12ef1-a49e-4721-a8dd-94c04da19839",
+        "target": "fd588837-df5e-4a8c-9ca6-3cbd097fd243",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "9df12ef1-a49e-4721-a8dd-94c04da19839",
+            "sourceTableId": "1ce18613-dec2-40eb-b4e7-546b9b3d612d",
+            "columns": [
+              {
+                "id": "fk_450f17c7-8d0d-4bf0-844b-1ae444b524b3",
+                "name": "fk_Vendedor",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "c21000ac-2bfd-4a14-b5c1-3f6b0818b511",
+        "type": "Relational",
+        "source": "fd588837-df5e-4a8c-9ca6-3cbd097fd243",
+        "targetHandle": "foreign-key-handle-c22d4ccf-c7b7-412a-8440-b316e5cfc195",
+        "target": "54bbdaea-e1be-46b0-8fc8-d36972def9d3",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "c22d4ccf-c7b7-412a-8440-b316e5cfc195",
+            "sourceTableId": "fd588837-df5e-4a8c-9ca6-3cbd097fd243",
+            "columns": [
+              {
+                "id": "fk_1dce6c3a-81ec-419d-847f-21cd3d803467",
+                "name": "Id_Venta",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "9ab42555-fc99-4d3d-8fee-b6dba28d69a7",
+        "type": "Relational",
+        "source": "aad3ee4b-e182-417f-b0c6-ef124fb76538",
+        "targetHandle": "foreign-key-handle-e8123edd-bdc6-422c-932a-4993fab95c7b",
+        "target": "54bbdaea-e1be-46b0-8fc8-d36972def9d3",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "e8123edd-bdc6-422c-932a-4993fab95c7b",
+            "sourceTableId": "aad3ee4b-e182-417f-b0c6-ef124fb76538",
+            "columns": [
+              {
+                "id": "fk_4a9922a0-7383-4641-8f0a-6c95822c139a",
+                "name": "Id_Viaje",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "2d6fa5a2-9e2d-4bd5-b017-13c80f5389c3",
+        "type": "Relational",
+        "source": "deff0618-ad06-469b-8ce4-56ec25335ef0",
+        "targetHandle": "foreign-key-handle-b194aa97-274a-4334-b090-c3c759840d43",
+        "target": "54bbdaea-e1be-46b0-8fc8-d36972def9d3",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "b194aa97-274a-4334-b090-c3c759840d43",
+            "sourceTableId": "deff0618-ad06-469b-8ce4-56ec25335ef0",
+            "columns": [
+              {
+                "id": "fk_1457d80c-e21e-45fe-a69d-27b6f2782db0",
+                "name": "Id_Butaca",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "579e8fc5-00de-4c2e-b495-450b689714b3",
+        "type": "Relational",
+        "source": "b0dd416b-6dcb-4b27-a2a9-97ab81545ea1",
+        "targetHandle": "foreign-key-handle-d7f4efff-7cda-47d9-8832-107025b99021",
+        "target": "54bbdaea-e1be-46b0-8fc8-d36972def9d3",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "d7f4efff-7cda-47d9-8832-107025b99021",
+            "sourceTableId": "b0dd416b-6dcb-4b27-a2a9-97ab81545ea1",
+            "columns": [
+              {
+                "id": "fk_1f13f1cc-f600-49f6-b279-4753ccf9cac8",
+                "name": "fk_Pasajero",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "f6b025ea-6fe4-4500-8861-c90b2709e671",
+        "type": "Relational",
+        "source": "fd588837-df5e-4a8c-9ca6-3cbd097fd243",
+        "targetHandle": "foreign-key-handle-4b6e1ac5-26e8-40ad-83ad-544886bd9090",
+        "target": "61d1c008-27c4-4cad-8884-9e17304fdaf2",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "4b6e1ac5-26e8-40ad-83ad-544886bd9090",
+            "sourceTableId": "fd588837-df5e-4a8c-9ca6-3cbd097fd243",
+            "columns": [
+              {
+                "id": "fk_1dce6c3a-81ec-419d-847f-21cd3d803467",
+                "name": "Id_Venta",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "viewport": {
+      "x": 365.3743756185154,
+      "y": 79.7298151619994,
+      "zoom": 0.6450543588375748
+    }
+  },
+  "name": "esquema_normalizado_final.png",
+  "folder": {
+    "name": "etapa 2",
+    "folderType": 2,
+    "parentFolder": {
+      "depth": 0,
+      "id": 390140,
+      "name": "Diagrams",
+      "folderType": 1
+    },
+    "depth": 1,
+    "id": 414440
+  },
+  "id": 604355,
+  "updatedAtTimestamp": 1789946193
+}
