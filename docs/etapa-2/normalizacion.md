@@ -1,4 +1,6 @@
 # NORMALIZACIÓN
+![Diagrama de Normalización](./normalizacion.png)
+
 
 ## Justificación del Proceso de Normalización (1FN, 2FN y 3FN)
 
