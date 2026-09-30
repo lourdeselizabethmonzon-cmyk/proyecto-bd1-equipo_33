@@ -1,5 +1,7 @@
 # NORMALIZACIÓN
-![Diagrama de Normalización](./normalizacion.png)
+
+![Diagrama de Normalización](./normalizacion-erd.png)
+
 
 
 ## Justificación del Proceso de Normalización (1FN, 2FN y 3FN)
