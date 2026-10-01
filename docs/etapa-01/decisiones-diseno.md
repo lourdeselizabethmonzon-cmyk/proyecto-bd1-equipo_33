@@ -1,3 +1,5 @@
+#  Decisiones de Diseño — Etapa I
+
 * **Selección y acotación del dominio:** Se eligió el rubro de transporte de pasajeros de larga distancia ("Corrientes Porá Bus"), delimitando el alcance estrictamente a la programación de viajes, control de flota, venta/emisión de boletos y registro de pagos.
 
 * **Gestión de capacidad como stock físico:** Se resolvió que el stock no sea un número entero genérico, sino que esté representado por la existencia física individual de cada asiento (Butaca) perteneciente a un Colectivo específico, garantizando que solo se vendan plazas reales y bloqueando la sobreventa por viaje.
