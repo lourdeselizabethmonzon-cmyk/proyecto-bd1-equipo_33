@@ -57,7 +57,7 @@ CREATE TABLE Butacas (
     Id_Butaca INT IDENTITY(1,1) PRIMARY KEY,
     Nro_Butaca INT NOT NULL,
     Patente VARCHAR(20) NOT NULL,
-    Ubicacion VARCHAR(20) NOT NULL CHECK (Ubicacion IN ('Pasillo', 'Ventanilla', 'Semi', 'Cama')),
+    Ubicacion VARCHAR(20) NOT NULL CHECK (Ubicacion IN ('Pasillo', 'Ventanilla')),
     CONSTRAINT FK_Butacas_Colectivo FOREIGN KEY (Patente) 
         REFERENCES Colectivo(Patente) ON DELETE CASCADE
 );
