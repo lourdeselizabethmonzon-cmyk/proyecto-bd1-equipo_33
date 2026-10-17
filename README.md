@@ -6,7 +6,7 @@
 
 <table>
 <tr>
-<th align="left"><h2>🏢 ORGANIZACIÓN</h2></th>
+<th align="left"><h2> ORGANIZACIÓN</h2></th>
 </tr>
 <tr>
 <td>
@@ -19,7 +19,7 @@
 
 <table>
 <tr>
-<th align="left"><h2>📋 Presentación y Contexto</h2></th>
+<th align="left"><h2> Presentación y Contexto</h2></th>
 </tr>
 <tr>
 <td>
@@ -28,12 +28,12 @@ A lo largo de su trayectoria operativa, la empresa ha gestionado la venta y la a
 
 Esta falta de centralización se manifiesta en las siguientes dificultades cotidianas:
 
-* 🚫 **Sobreventa física y duplicación de butacas.**
-* 📉 **Pérdida de reventa de butacas canceladas.**
-* ⚠️ **Cierre de caja y arqueos manuales propensos a errores.**
-* ⏳ **Carga repetitiva y lenta de datos de clientes.**
-* 📊 **Falta de informes y estadísticas para la toma de decisiones.**
-* 🔒 **Falta de control del personal y auditoría de ventas.**
+*  **Sobreventa física y duplicación de butacas.**
+*  **Pérdida de reventa de butacas canceladas.**
+*  **Cierre de caja y arqueos manuales propensos a errores.**
+*  **Carga repetitiva y lenta de datos de clientes.**
+*  **Falta de informes y estadísticas para la toma de decisiones.**
+*  **Falta de control del personal y auditoría de ventas.**
 
 </td>
 </tr>
@@ -41,7 +41,7 @@ Esta falta de centralización se manifiesta en las siguientes dificultades cotid
 
 <table>
 <tr>
-<th align="left"><h2>⚖️ Reglas de Negocio</h2></th>
+<th align="left"><h2> Reglas de Negocio</h2></th>
 </tr>
 <tr>
 <td>
@@ -76,7 +76,7 @@ Esta falta de centralización se manifiesta en las siguientes dificultades cotid
 
 <table>
 <tr>
-<th align="left"><h2>🎯 Alcance del Sistema</h2></th>
+<th align="left"><h2> Alcance del Sistema</h2></th>
 </tr>
 <tr>
 <td>
@@ -183,7 +183,7 @@ sql/
 
 ---
 
-## 📚 Documentación del Proyecto por Etapas
+##  Documentación del Proyecto por Etapas
 
 <table>
 <tr>
