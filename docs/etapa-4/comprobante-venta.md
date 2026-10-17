@@ -1,31 +1,38 @@
-## CONSULTA 2: Reporte Agregado por Vendedor
+# Comprobante de Venta: Encabezado, Detalle y Total Acumulado
 
-Durante años, la falta de centralización y el manejo mediante planillas manuales provocaron severas dificultades cotidianas en la empresa: cierres de caja y arqueos manuales propensos a errores al finalizar cada turno, una total falta de informes y estadísticas para evaluar el rendimiento comercial, y una marcada ausencia de control sobre el personal y auditoría de ventas, impidiendo saber con certeza qué volumen de transacciones y dinero recaudó cada empleado.
+Durante años, al llevar registros en planillas manuales, los datos del cliente, la fecha o el número de factura debían repetirse en cada línea, lo que generaba redundancia, datos desactualizados y un riesgo permanente de inconsistencia.
 
-Frente a esta problemática, el uso de un Sistema de Gestión de Bases de Datos relacional permite centralizar y auditar cada transacción en tiempo real vinculando al vendedor con sus comprobantes emitidos. A través de SQL, la gerencia puede consolidar métricas clave de recaudación y productividad de manera instantánea, dejando atrás los arqueos manuales en papel y transformando registros dispersos en información estratégica para la toma de decisiones.
+Frente a esta limitación, el pasaje a un Sistema de Gestión de Bases de Datos relacional permite normalizar la información en entidades separadas (`Venta`, `Cliente_comprador`, `Pasaje`, `Viaje`). De esta forma se garantiza la integridad de los datos, se congelan las tarifas al momento exacto de la transacción y se asegura que cada comprobante emitido sea único, consistente y auditable.
 
-### Desarrollo
+---
 
-Para consolidar el desempeño de cada vendedor dentro de un período determinado, la consulta vincula las transacciones con los datos del personal mediante combinaciones internas (`INNER JOIN`) dentro de la cláusula `FROM`:
+## Desarrollo Técnico
 
-* **Vinculación relacional:** El motor relaciona Venta, Empleado, Persona y Pasaje a través de sus claves primarias y foráneas (`v.Id_Empleado = e.Id_Persona`, `e.Id_Persona = p_emp.Id_Persona`, `v.Id_Venta = pas.Id_Venta`), asegurando la trazabilidad exacta entre el empleado responsable y cada boleto efectivamente emitido.
-* **Filtrado temporal:** La cláusula `WHERE v.Fecha BETWEEN '2026-09-01' AND '2026-10-31'` delimita el análisis a un rango de fechas específico, permitiendo evaluar cierres mensuales o períodos de auditoría puntuales sin interferencia de datos fuera de término.
+### Unificación de Datos y Relaciones
 
-Por otro lado, en la cláusula `SELECT` y mediante el uso de `GROUP BY`, se aplican funciones escalares y funciones de agregación para resumir la actividad comercial:
+Para unificar los datos generales de la operación (encabezado) con cada uno de los pasajes adquiridos (detalle), se recurre a combinaciones internas múltiples (`INNER JOIN`) dentro de la cláusula `FROM`:
 
-* **Identificación del vendedor:** Se extrae el legajo del empleado y se utiliza el operador de concatenación (`+`) sobre nombre y apellido (`p_emp.Nombre_1 + ' ' + p_emp.Apellido_1 AS Vendedor`) para obtener una salida clara y legible del personal auditado.
-* **Conteo de transacciones únicas (`COUNT DISTINCT`):** Dado que una venta puede contener múltiples pasajes, se aplica `COUNT(DISTINCT v.Id_Venta) AS CantidadVentasRealizadas`. Esto evita duplicar comprobantes y refleja con exactitud la cantidad real de clientes atendidos o transacciones concretadas.
-* **Volumen de pasajes emitidos:** Mediante `COUNT(pas.Id_Pasaje) AS TotalPasajesVendidos`, se contabiliza la cantidad total de boletos físicos comercializados por cada agente.
+* **Cruce por claves:** El motor compara las claves primarias y foráneas (`v.Id_Cliente = c.Id_Persona`, `v.Id_Venta = pas.Id_Venta`, etc.), evitando el producto cartesiano y trayendo únicamente las filas que guardan una relación lógica estricta.
+* **Filtro transaccional:** La cláusula `WHERE v.Id_Venta = 4` actúa como el filtro de selección necesario para restringir el comprobante a la transacción requerida sin traer registros ajenos.
 
-Por último, el cálculo económico y la jerarquización del reporte se resuelven de forma directa en el motor:
+---
+
+### Transformaciones en la Cláusula SELECT
+
+En la cláusula `SELECT`, se aplican operadores y funciones escalares de fila:
+
+* **Identidad del cliente:** Se utiliza el operador de concatenación (`+`) para unificar nombre y apellido en una sola columna legible (`ClienteComprador`).
+* **Depuración de hora:** Mediante `CAST(vi.Hora_Salida AS TIME(0))` se eliminan los decimales de microsegundos, adaptando el formato al estándar comercial.
+* **Subtotal por renglón:** Al representar cada fila exactamente un pasaje individual, el campo `pas.Precio_Unitario AS SubtotalRenglon` cumple de forma explícita con el cálculo del importe correspondiente a ese renglón particular.
+
+---
+
+### Cálculo Dinámico del Total Acumulado
+
+En lugar de recurrir a fórmulas externas en hojas de cálculo que pueden corromperse, el cálculo se resuelve de manera dinámica dentro del motor utilizando la función analítica de agregación `SUM()` con ventana:
 
 ```sql
-SUM(pas.Precio_Unitario) AS RecaudacionTotal
-...
-GROUP BY 
-    e.Legajo,
-    p_emp.Nombre_1,
-    p_emp.Apellido_1
-ORDER BY 
-    RecaudacionTotal DESC;
-    
+SUM(pas.Precio_Unitario) OVER(
+    PARTITION BY v.Id_Venta 
+    ORDER BY pas.Id_Pasaje
+) AS TotalAcumuladoComprobante
