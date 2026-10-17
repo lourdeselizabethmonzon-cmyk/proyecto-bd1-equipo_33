@@ -88,9 +88,9 @@ INSERT INTO Colectivo (Patente, Marca, Modelo, Anio) VALUES
 INSERT INTO Butacas (Nro_Butaca, Patente, Ubicacion) VALUES
 (1, 'AA123BB', 'Ventanilla'), (2, 'AA123BB', 'Pasillo'),
 (3, 'AB456CC', 'Ventanilla'), (4, 'AB456CC', 'Pasillo'),
-(5, 'AC789DD', 'Semi'), (6, 'AC789DD', 'Cama'),
+(5, 'AC789DD', 'Semi'), (6, 'AC789DD', 'ventanilla'),
 (7, 'AD012EE', 'Ventanilla'), (8, 'AD012EE', 'Pasillo'),
-(9, 'AE345FF', 'Semi'), (10, 'AE345FF', 'Cama');
+(9, 'AE345FF', 'Semi'), (10, 'AE345FF', 'ventanilla');
 
 -- Ruta
 INSERT INTO Ruta (Distancia, Tiempo_Estimado, Id_Terminal_Origen, Id_Terminal_Destino) VALUES
