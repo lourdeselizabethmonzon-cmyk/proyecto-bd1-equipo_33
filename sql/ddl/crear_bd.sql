@@ -65,7 +65,7 @@ CREATE TABLE Butacas (
 
 CREATE TABLE Viaje (
     Id_Viaje INT IDENTITY(1,1) PRIMARY KEY,
-    Hora_Salida DATETIME NOT NULL,
+    Hora_Salida SMALLDATETIME NOT NULL,
     Precio_Base DECIMAL(10,2) NOT NULL CHECK (Precio_Base > 0),
     Patente VARCHAR(20) NOT NULL,
     Id_Ruta INT NOT NULL,
