@@ -35,4 +35,4 @@ En esta sección se detallan las pautas, el desarrollo y la estructura para la p
 
 ## 4. CAPTURA DE PANTALLA ADJUNTA
 
-![Prueba de Transacciones en SSMS](prueba_transacciones.png)
+[Prueba de Transacciones en SSMS](image.png)
