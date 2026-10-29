@@ -154,4 +154,4 @@ INSERT INTO Pasaje (Precio_Unitario, Id_Venta, Id_Viaje, Id_Butaca, Id_Pasajero)
 (5000.00, 3, 3, 5, 9),
 (21000.00, 4, 4, 7, 10),
 (25000.00, 5, 5, 9, 7);
-GO ahi no tenriamos que tener ningun problema
+GO 
