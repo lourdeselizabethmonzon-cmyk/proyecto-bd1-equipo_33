@@ -66,4 +66,3 @@ BEGIN
     INSERT INTO Pasaje (Precio_Unitario, Id_Venta, Id_Viaje, Id_Butaca, Id_Pasajero)
     VALUES (@Precio_Unitario, @NuevaVentaId, @Id_Viaje, @Id_Butaca, @Id_Pasajero);
 END;
-GO
