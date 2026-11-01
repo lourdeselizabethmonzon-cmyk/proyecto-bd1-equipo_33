@@ -1,5 +1,5 @@
 /* ============================================================
-   CÓDIGO: SCRIPT DE OPTIMIZACIÓN Y RENDIMIENTO
+   OPTIMIZACIÓN Y RENDIMIENTO
    OBJETIVO:
    Mejorar los tiempos de ejecución de las consultas e informes 
    más pesados del sistema mediante la creación de índices no clúster 
@@ -10,8 +10,8 @@
    filtrados por fechas que generaban alto costo de E/S (Table Scans).
 
    SECUENCIA DE EJECUCIÓN:
-   1. Creación de índices no clúster en columnas clave de las tablas 
-      Venta y DetalleVenta para evitar escaneos completos.
+   1. Creación de índices no clúster en columnas clave de la tabla 
+      venta para evitar escaneos completos.
    2. Activación de estadísticas de rendimiento (IO y Tiempo) para 
       la medición comparativa.
    3. Ejecución de la consulta optimizada de reporte de ventas por cliente.
@@ -19,10 +19,6 @@
    RESULTADO ESPERADO SEGÚN LOS DATOS DE PRUEBA:
    - Reducción drástica en las lecturas lógicas de E/S.
    - Mejora en el tiempo de respuesta del servidor ante consultas agrupadas.
-
-   IMPORTANCIA:
-   Permite garantizar la escalabilidad y eficiencia de la base de 
-   datos ante un alto volumen de transacciones.
    ============================================================ */
 
 USE CorrientesPoraBus;
@@ -30,18 +26,13 @@ GO
 
 PRINT '1. CREACIÓN DE ÍNDICES NO CLÚSTER';
 -- Índice para acelerar los filtros y rangos por fecha en las ventas
-CREATE NONCLUSTERED INDEX IX_Venta_Fecha 
-ON Venta (fecha);
+CREATE NONCLUSTERED INDEX IX_venta_Fecha 
+ON venta (fecha);
 GO
 
 -- Índice para optimizar las consultas y reportes agrupados por cliente
-CREATE NONCLUSTERED INDEX IX_Venta_Cliente 
-ON Venta (id_cliente);
-GO
-
--- Índice para mejorar el rendimiento en los detalles de venta vinculados a productos
-CREATE NONCLUSTERED INDEX IX_DetalleVenta_Producto 
-ON DetalleVenta (id_producto);
+CREATE NONCLUSTERED INDEX IX_venta_Cliente 
+ON venta (id_cliente);
 GO
 
 
@@ -64,7 +55,7 @@ FROM
 JOIN 
     Persona p ON c.Id_Persona = p.Id_Persona
 INNER JOIN 
-    Venta v ON c.Id_Persona = v.id_cliente
+    venta v ON c.Id_Persona = v.id_cliente
 WHERE 
     v.fecha >= '2026-01-01'
 GROUP BY 
