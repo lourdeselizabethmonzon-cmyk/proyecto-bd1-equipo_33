@@ -1,65 +1,67 @@
-/* ============================================================
-   OPTIMIZACIÓN Y RENDIMIENTO
-   OBJETIVO:
-   Mejorar los tiempos de ejecución de las consultas e informes 
-   más pesados del sistema mediante la creación de índices no clúster 
-   estratégicos y el análisis de planes de ejecución.
-
-   ESCENARIO:
-   Se identificaron consultas repetitivas de reportes de ventas y 
-   filtrados por fechas que generaban alto costo de E/S (Table Scans).
-
-   SECUENCIA DE EJECUCIÓN:
-   1. Creación de índices no clúster en columnas clave de la tabla 
-      venta para evitar escaneos completos.
-   2. Activación de estadísticas de rendimiento (IO y Tiempo) para 
-      la medición comparativa.
-   3. Ejecución de la consulta optimizada de reporte de ventas por cliente.
-
-   RESULTADO ESPERADO SEGÚN LOS DATOS DE PRUEBA:
-   - Reducción drástica en las lecturas lógicas de E/S.
-   - Mejora en el tiempo de respuesta del servidor ante consultas agrupadas.
-   ============================================================ */
+-- ============================================================================
+-- PROYECTO: CorrientesPoraBus
+-- TEMA: Optimización de Consultas 
+-- DESCRIPCIÓN: Creación de índices no clúster y ejecución del reporte 
+--              optimizado de ventas y pasajes por cliente.
+-- ============================================================================
 
 USE CorrientesPoraBus;
 GO
 
-PRINT '1. CREACIÓN DE ÍNDICES NO CLÚSTER';
--- Índice para acelerar los filtros y rangos por fecha en las ventas
-CREATE NONCLUSTERED INDEX IX_venta_Fecha 
-ON venta (fecha);
+-- ----------------------------------------------------------------------------
+-- 1. CREACIÓN DE ÍNDICES NO CLÚSTER ESTRATÉGICOS
+-- Transformación de escaneos completos (Table Scans) en búsquedas directas (Index Seeks)
+-- ----------------------------------------------------------------------------
+
+-- Índice sobre el campo de filtrado por fecha en la tabla Venta
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE name = 'IX_Venta_Fecha' AND object_id = OBJECT_ID('Venta'))
+BEGIN
+    CREATE NONCLUSTERED INDEX IX_Venta_Fecha 
+    ON Venta (Fecha);
+END;
 GO
 
--- Índice para optimizar las consultas y reportes agrupados por cliente
-CREATE NONCLUSTERED INDEX IX_venta_Cliente 
-ON venta (id_cliente);
+-- Índice sobre la clave foránea del cliente en la tabla Venta
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE name = 'IX_Venta_Cliente' AND object_id = OBJECT_ID('Venta'))
+BEGIN
+    CREATE NONCLUSTERED INDEX IX_Venta_Cliente 
+    ON Venta (Id_Cliente);
+END;
 GO
 
-
-PRINT '2. ACTIVACIÓN DE ESTADÍSTICAS DE RENDIMIENTO';
--- Habilitamos las estadísticas para medir el impacto de la optimización
+-- ----------------------------------------------------------------------------
+-- 2. ACTIVACIÓN DE HERRAMIENTAS DE DIAGNÓSTICO DE RENDIMIENTO
+-- ----------------------------------------------------------------------------
 SET STATISTICS IO ON;
 SET STATISTICS TIME ON;
 GO
 
-
-PRINT '3. EJECUCIÓN DE CONSULTA OPTIMIZADA (Informe de Ventas)';
--- Consulta mejorada que aprovecha los índices creados para evitar Table Scans
+-- ----------------------------------------------------------------------------
+-- 3. CONSULTA OPTIMIZADA: INFORME DE VENTAS Y PASAJES ACUMULADOS POR CLIENTE
+-- Agrupación de transacciones y suma de montos a partir de un rango de fechas
+-- ----------------------------------------------------------------------------
 SELECT 
-    c.id_cliente,
+    v.Id_Cliente,
     p.Nombre_1 + ' ' + p.Apellido_1 AS Cliente,
-    COUNT(v.id_venta) AS total_transacciones,
-    SUM(v.total) AS monto_acumulado
+    COUNT(v.Id_Venta) AS total_transacciones,
+    ISNULL(SUM(ps.Precio_Unitario), 0.00) AS monto_acumulado
 FROM 
     Cliente_comprador c
-JOIN 
+INNER JOIN 
     Persona p ON c.Id_Persona = p.Id_Persona
 INNER JOIN 
-    venta v ON c.Id_Persona = v.id_cliente
+    Venta v ON c.Id_Persona = v.Id_Cliente
+LEFT JOIN 
+    Pasaje ps ON v.Id_Venta = ps.Id_Venta
 WHERE 
-    v.fecha >= '2026-01-01'
+    v.Fecha >= '2026-01-01'
 GROUP BY 
-    c.id_cliente,
+    v.Id_Cliente,
     p.Nombre_1,
     p.Apellido_1;
+GO
+
+-- Desactivación opcional de estadísticas
+SET STATISTICS IO OFF;
+SET STATISTICS TIME OFF;
 GO
