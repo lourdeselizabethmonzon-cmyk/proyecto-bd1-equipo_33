@@ -271,12 +271,21 @@ Diseño, ejecución y análisis de consultas SQL para resolver necesidades crít
 
 Investigación e implementación de componentes y mecanismos avanzados en el motor relacional para asegurar robustez, velocidad, consistencia transaccional y seguridad a largo plazo.
 
-* [`procedimiento-funcionales.md`](./docs/etapa-5/procedimiento-funcionales.md) — Fundamentos y rutinas almacenadas para automatización y encapsulamiento.
-* [`transacciones.md`](./docs/etapa-5/transacciones.md) — Control transaccional (`BEGIN`, `COMMIT`, `ROLLBACK`) para salvaguardar propiedades ACID.
-* [`triggers-auditoria.md`](./docs/etapa-5/triggers-auditoria.md) — Disparadores para trazabilidad de estados y auditoría sobre entidades críticas.
-* [`seguridad.md`](./docs/etapa-5/seguridad.md) — Definición de roles, permisos granulares y usuarios bajo principio de menor privilegio.
-* [`indice-optimizacion.md`](./docs/etapa-5/indice-optimizacion.md) — Planes de indexación estratégica para optimizar tiempos de ejecución.
-* [`sql/tecnico/`](./sql/tecnico/) — Directorio con scripts SQL de procedimientos, funciones, transacciones, triggers, seguridad e índices.
+* [`procedimiento-funcionales.md`](./docs/etapa-5/procedimientos_funciones) — Los procedimientos almacenados (Stored Procedures) son programas SQL que se guardan  dentro de la base de datos y pueden ejecutar múltiples operaciones. Las funciones  almacenadas (Functions) son rutinas que reciben parámetros y devuelven un valor o una 
+tabla.
+
+* [`transacciones.md`](./docs/etapa-5/transacciones) — Una transacción es un conjunto de operaciones SQL que se ejecutan como una única unidad lógica de trabajo. Si una operación falla, todas las anteriores se deshacen. Esto garantiza las propiedades ACID: Atomicidad, Consistencia, Aislamiento y Durabilidad.
+
+
+* [`triggers-auditoria.md`](./docs/etapa-5/triggers_auditoria) — Los triggers son procedimientos que se ejecutan automáticamente cuando ocurre un evento sobre una tabla: 
+● INSERT 
+● UPDATE 
+● DELETE 
+Se utilizan frecuentemente para auditorías y trazabilidad.  
+
+* [`seguridad.md`](./docs/etapa-5/seguridad) — a seguridad en una base de datos permite controlar qué usuarios pueden acceder a la información y qué operaciones pueden realizar. SQL Server permite administrar permisos de manera individual (usuarios) o agrupándolos mediante roles. Esto facilita proteger la información y aplicar el principio de mínimo privilegio. 
+  
+* [`indice-optimizacion.md`](./docs/etapa-5/optimizacion_de_consultas) — Los índices son estructuras que SQL Server utiliza para localizar información de forma más eficiente.  La implementación adecuada de índices permite reducir significativamente el volumen de datos analizados durante una consulta.
 
 </td>
 </tr>
